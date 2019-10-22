@@ -1,0 +1,162 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "vars";
+
+//increase bootstrap container width
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1300px;
+  }
+}
+
+//general styles
+body {
+  font-family: 'Roboto', sans-serif;
+  color: $white;
+}
+
+h1 {
+  font-size: 1.6rem;
+  @extend .mb-4;
+}
+
+.left-side {
+  p {
+    font-size: 1.5rem;
+  }
+
+  a {
+    color: $black;
+    font-weight: 500;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 4rem;
+  }
+}
+
+main {
+  margin-top: 8em;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 4em;
+  }
+}
+
+.bg-wrapper {
+  background: $green url('../img/background.jpg') no-repeat;
+  background-size: cover;
+  background-position: 0 -250px;
+  padding-bottom: 11em;
+
+  @media(max-width: 1400px){
+    background-position: center;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 1em;
+  }
+}
+
+
+//Navigation
+
+.navbar {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.25rem;
+
+  //Logo
+  .navbar-brand {
+    font-family: 'Bungee Outline', cursive;
+    font-size: 2rem;
+    color: $white;
+    font-weight: bold;
+
+    @include media-breakpoint-down(xs) {
+      font-size: 1.5rem;
+    }
+
+    &:hover {
+      color: $lightgray;
+    }
+  }
+
+  .nav {
+    margin-top: 0.4rem;
+
+    .nav-item {
+      margin-left: 2rem;
+
+      @include media-breakpoint-down(sm) {
+        margin-left: 1rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin-left: 0.5rem;
+      }
+
+      //Link
+      .nav-link {
+        color: $white;
+        font-weight: 700;
+        padding: 0.5rem 2rem;
+
+        @include media-breakpoint-down(xs) {
+          padding: 0.25rem 1rem;
+        }
+
+        &:hover {
+          color: $lightgray;
+        }
+      }
+
+      &.current {
+        border: 2px solid $white;
+
+        .nav-link:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+
+//Form
+.form-control {
+  border-radius: 0;
+  border: none;
+  color: $green;
+  padding: .75rem 1.5rem;
+  height: auto;
+  font-size: 0.8rem;
+
+  &::-webkit-input-placeholder { /* Edge */
+    color: $green;
+  }
+
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $green;
+  }
+
+  &::placeholder {
+    color: $green;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-primary {
+  background: $black;
+  border-radius: 0;
+  border: none;
+  padding: .75rem 4rem;
+  font-size: 0.8rem;
+
+  &:hover {
+    background: $darkgray;
+  }
+}
